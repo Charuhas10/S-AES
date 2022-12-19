@@ -19,3 +19,8 @@ The encryption algorithm takes a 16-bit block of plaintext as input and a 16-bit
 ![image](https://user-images.githubusercontent.com/72398218/208376847-6a5eaa28-50f7-490f-89ca-dc0c3bc8d7fb.png)
 Each function operates on a 16-bit state, treated as a matrix of nibbles, where one nibble is a 4-bit number. The initial state matrix is the 16-bit plaintext, State is modified by each subsequent function in the encryption process, producing after the last function the 16-bit ciphertext.
 
+We now look at each of the four functions in turn.
+##### Add Key
+The add key function consists of the bitwise XOR of the state matrix with the 16-bit round key. The key is a 16-bit number, and the state matrix is a 16-bit number. The XOR operation is performed on each bit of the state matrix with the corresponding bit of the key. The result is the new state matrix.
+The inverse of the add key function is the same as the add key function because the XOR operation is its own inverse.
+![image](https://user-images.githubusercontent.com/72398218/208418854-0c0546b9-2b2b-4924-93a8-c3ddf7e59b4f.png)
