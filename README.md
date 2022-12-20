@@ -41,12 +41,19 @@ The mix column function operates on each column individually. Each nibble of a c
 For key expansion, the 16 bits of the initial key are grouped into a row of two 8-bit words. Below figure shows the expansion into sex words, by the calculation of four new words from the initial two words. The algorithm is
 ![image](https://user-images.githubusercontent.com/72398218/208587160-1b9233a9-1c71-41c2-8825-ff2f00cbc2af.png)
 Rcon is a round constant, defined as follows: RC[i] = xi+2, so that RC[1] = x3 = 1000 and RC[2] = x4mod(x4 + x + 1) = x + 1 = 0011. RC[i] forms the left-most nibble of a byte, with the right-most nibble being all zeroes. Thus, Rcon(1) = 10000000 and Rcon(2) = 00110000. For example, suppose the key is 2D55 = 0010 1101 0101 0101 = w0w1. Then 
+
 w2 = 00101101 ⊕ 10000000 ⊕ SubNib(01010101)
+
 = 00101101 ⊕ 10000000 ⊕ 00010001 = 10111100
+
 w3 = 10111100 ⊕ 01010101 = 11101001
+
 w4 = 10111100 ⊕ 00110000 ⊕ SubNib(10011110)
+
 = 10111100 ⊕ 00110000 ⊕ 00101111 = 10100011
+
 w5 = 10100011 ⊕ 11101001 = 01001010
+
 ![image](https://user-images.githubusercontent.com/72398218/208587289-9c85ec49-ae0c-4290-8b01-3e2e9ef6ab6a.png)
 
 ##### SAES Transformations
