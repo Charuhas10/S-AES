@@ -58,3 +58,6 @@ w5 = 10100011 ⊕ 11101001 = 01001010
 
 #### SAES Transformations
 ![image](https://user-images.githubusercontent.com/72398218/208587530-c0e785e8-c582-4e47-b354-194b622d9ef7.png)
+
+#### How to Run
+The following implementation of S-AES is very simple to run. Just enter the key and the plaintext you want to encrypt in binary form and compile the code to get the following ciphertext of the plaintext!
